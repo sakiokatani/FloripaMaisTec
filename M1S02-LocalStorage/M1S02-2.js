@@ -44,15 +44,15 @@ function redirect(){
      var storedPassword = localStorage.getItem('password');
 
 if (storedUser === null || storedPassword === null){
-     window.location.href = "http://127.0.0.1:5500/M1S02-2.html";
+     window.location.href = "./M1S02-2.html";
 }else{
-     window.location.href = "http://127.0.0.1:5500/logoutpage.html"
+     window.location.href = "./logoutpage.html"
 }};
 
 
 let btnLogout = document.getElementById("btn-logout");
      btnLogout.addEventListener("click", function(newevent){
           newevent.preventDefault();
-          redirect();
+          window.location.href = "./M1S02-2.html";
 });
 
