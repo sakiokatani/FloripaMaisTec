@@ -56,6 +56,3 @@ let btnLogout = document.getElementById("btn-logout");
           redirect();
 });
 
-function redirect(){
-     window.location.href = "http://127.0.0.1:5500/M1S02-2.html"
-};
