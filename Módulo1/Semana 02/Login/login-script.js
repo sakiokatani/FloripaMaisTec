@@ -35,7 +35,7 @@ btnLogin.addEventListener("click", function(event) {
 
 function setSuccessFor(){
      window.alert ("You're now logged in.");
-     window.location.href = "http://127.0.0.1:5500/loggedpage.html";
+     window.location.href = "./loggedpage.html";
 }
 
 function setErrorFor(){
