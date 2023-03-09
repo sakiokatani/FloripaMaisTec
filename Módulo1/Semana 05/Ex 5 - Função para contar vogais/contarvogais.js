@@ -11,19 +11,46 @@ if( typeof stringUsuario !== 'string'){
 
 if (typeof stringUsuario === 'string' && stringUsuario !== ''){
     inputValid = true;
-    console.log(countVowels());
+    countVowels();
 }
+
+// function countVowels(){
+//     vogais = [];
+//     for(i = 0; i < stringUsuario.length; i++){
+//         let letter = stringUsuario[i].toLowerCase();
+//     if(vowels.includes(letter)){      
+//     vogais.push(letter);  
+    
+//     }
+//     }
+//     console.log(vogais.length);
+    
+//     // console.log(vogais);
+//     // console.log(vogais.length);
+    
+// }
+
+
+
 
 function countVowels(){
     vogais = [];
     for(i = 0; i < stringUsuario.length; i++){
         let letter = stringUsuario[i].toLowerCase();
+        let vowel = vowels[i]
     if(vowels.includes(letter)){      
     vogais.push(letter);  
     }
+}
+    if(vogais.length === 0){
+        console.log("Não há vogais na palavra ou frase inserida")
     
     }
-    // console.log(vogais);
-    // console.log(vogais.length);
-    return vogais.length;
-}
+    else{
+        console.log(vogais.length);
+    }
+    }
+    
+    
+    
+
