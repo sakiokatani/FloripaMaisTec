@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./main.js" async></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class = "card">
+            <div id = "content">
+                <div class = "inputSection">
+                    <span>
+                        <input type ="number" id = "userInput"/>
+                    </span>
+                </div>
+                <div id="imgSection">
+                    <img  id="seriesImgElement"/>
+                    <img id = "charImgElement"/>
+                    <img id =  "maskElement"/>
+                </div>
+                
+                    <div id = "imgSection"></div>
+                    <div id = "imgSection2"></div>
+                  <div id="textSection">
+                    <h3 id = "cardNumber"></h3>
+                    <p id = "nameHeading"></p>
+                    <p id = "status"></p>
+                    <P id = "species"></P>
+                    <P id = "gender"></P>
+                    <P id = "origin"></P>
+                    <P id = "location"></P>
+             </div>
+                
+                    <div id= "number">
+                    <p>
+                    <h1 id="cardNumber"></h1>
+                    </p>
+                    </div>
+            <!-- </div> -->
+        </div>
+
+    </div>
+    
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+ <script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".card"), {
+		max: 25,
+        speed: 400,
+        glare: true,
+            "max-glare": 0.5
+        
+        
+	});
+    </script>
+</body>
+</html>
