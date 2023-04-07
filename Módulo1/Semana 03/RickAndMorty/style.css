@@ -180,7 +180,16 @@ body{
     height: 320px;
     width: 320px;
     left:0px;
+    transition: background-color 0.5s ease;
 } 
+
+#transitionElement{
+    position:absolute;
+    top: 150px;
+    left:0px;
+    height: 400px;
+    width: 400px;
+}
 
 #imgSection{
     position:absolute;
@@ -197,16 +206,16 @@ body{
 
 #imgSection{
 
-mask-image: url(./img/giphy.gif);
--webkit-mask-image: url(./img/giphy.gif);
-mask-size: 98%;
--webkit-mask-size: 98%;
+mask-image: url(./img/portal.gif);
+-webkit-mask-image: url(./img/portal.gif);
+mask-size: 120%;
+-webkit-mask-size: 120%;
 mask-repeat: no-repeat;
 -webkit-mask-repeat: no-repeat;
-mask-position: 45px;
--webkit-mask-position-x: -45px;
-mask-position: 150px;
--webkit-mask-position-y: 150px; 
+mask-position: 60px;
+-webkit-mask-position-x: -80px;
+mask-position: -200px;
+-webkit-mask-position-y: 80px; 
 } 
 
 #nameHeading{

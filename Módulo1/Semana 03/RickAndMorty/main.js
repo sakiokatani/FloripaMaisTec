@@ -21,32 +21,36 @@ let charOrigin = document.getElementById('origin');
 let charLocation = document.getElementById('location');
 let seriesImgElement = document.getElementById('seriesImgElement');
 let charImgElement = document.getElementById('charImgElement');
+let transitionElement = document.getElementById('transition');
 let imgSection = document.getElementById('imgSection');
 let imgSection2 = document.getElementById('imgSection2');
 let maskElement = document.getElementById('maskElement');
 
 
-//for images:
-
-let seriesImgDiv = document.getElementById('imgDiv');
-
-
+// standardCard();
 
 userInput.addEventListener('keyup', (e) =>{
     e.preventDefault();
     console.log('pressed')
     if(e.key === 'Enter'){
-        if(userInput.value !== 0 && userInput.value !== ''){
-            cardNumber.innerHTML = userInput.value;
-            number.appendChild(cardNumber);
-            cardContent.appendChild(number)
-        // seriesImgElement.style.opacity=0;
+        if(userInput.value !== '0' && userInput.value !== ''){
+            
+            transition();
             getCharacterData();
-
+        }else if(userInput.value === '0' || userInput.value === ''){
+            transition();
+            standardCard();
         }
     }
 })
 
+function transition(){
+    cardNumber.innerHTML = userInput.value;  
+    number.appendChild(cardNumber);
+    cardContent.appendChild(number);
+    seriesImgElement.style.opacity=0;
+                
+}
 
 function getCharacterData(){
     
@@ -94,7 +98,7 @@ function getCharacterData(){
 
 //for the standard card content:
 function standardCard(){
-    
+    seriesImgElement.style.opacity=1;
     nameHeading.innerHTML = "<b>Rick and Morty</b>"
     charStatus.innerHTML = `<b>Status:</b> ${seriesCurrentStatus}`;
     charSpecies.innerHTML = '<b>Enter any number';
@@ -124,26 +128,9 @@ function standardCard(){
     cardContent.appendChild(textSection)
     cardContent.appendChild(number);
 
+    userInput.value = '';
 }
-
-// document.addEventListener('DOMContentLoaded', () => {
-    
 
 
 const initialCard = standardCard();
 const characterCard = getCharacterData();
-
-standardCard();
-characterCard();
-// manipulatemask();
-// //   });
-//  function manipulatemask(){
-//     if(standardCard){
-//         seriesImgElement.style.opacity = 1;
-//     }
-//     else if(characterCard){
-//         seriesImgElement.style.opacity = 0;
-//     };
-//  }
-
-console.log("A saki tem "+ 30+1 +"anos");
