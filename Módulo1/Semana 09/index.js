@@ -1,12 +1,15 @@
 const express = require('express');
 const connectSequelize = require('./src/database');
 const Place = require('./src/models/places_database')
+const User = require('./src/models/user_database');
+const userRouter = require('./src/routes/user_routes');
+
 
 const app = express();
 app.use(express.json());
+app.use('/api', userRouter);
 
-
-connectSequelize.authenticate();
+// connectSequelize.authenticate();
 connectSequelize.sync({alter:true});
 
 app.get('/', (req, res)=>{
@@ -55,8 +58,42 @@ app.post('/places', async(req, res) =>{
 
 app.get('/places', async(req, res)=>{
     try{
-    const places = await Place.findAll();
-    return res.json(places);
+        findAllPlaces = await Place.findAll();
+    
+        res.status(200).json(findAllPlaces);
+
+
+    }catch(error){
+        console.log(error);
+        res.status(500).json({message: 'error returning requisition'})
+    }
+})
+
+app.get('/places/:id', async(req, res)=>{
+    try{
+        if(!req.params.id){
+    
+        res.status(404).json({message:"Place ID not found. Please check the ID and try again."});
+
+    }else{
+    filterPlacesById = await Place.findOne(
+        {
+            where:
+            {
+                id: req.params.id
+            }
+        }
+    )
+
+    if(!filterPlacesById){
+        res.status(404).json({message: "Place ID not found, please check the ID and try again."})
+    }else{
+        res.status(200).json(filterPlacesById);
+    }
+
+}
+
+
     }catch(error){
         console.log(error);
         res.status(500).json({message: 'error returning requisition'})
@@ -95,7 +132,9 @@ app.put('/places/:id', async(req,res)=>{
     }catch(error){
         res.status(500).json({message: 'error updating data'})
     }
-})
+});
+
+
 
 
 
